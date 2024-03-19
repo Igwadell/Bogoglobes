@@ -1,0 +1,49 @@
+@import "../../sass/mixins.scss";
+#planets{
+    min-width: 100%;
+    height: pxToVw(96);
+    background: $planetBlack;
+    display: flex;
+    align-content: center;
+    padding-left: pxToVw(50);
+    gap:pxToVw(33);
+    *{
+        @include transition;
+    }
+    .single-planet{
+        align-content: center;
+        align-items: center;
+        gap:pxToVw(15);
+        .rounded-circle{
+            width: pxToVw(62);
+            height: pxToVw(62);
+            @include background-img;
+        }
+        .planet-text{
+            font-family: $euclidMedium;
+            font-weight: 500;
+            font-size: pxToVw(14);
+            line-height: 1;
+            text-align: left;
+            color: $white;
+        }
+    }
+    .planet-clicked{
+        display: grid;
+        place-items: center;
+        .rounded-container{
+            transform: translateY((pxToVw(-20)));
+            width: pxToVw(88);
+            height: pxToVw(88);
+            background: $planetBlack;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+        }
+        .planet-text{
+            font-family: $euclidMedium;
+            font-size: pxToVw(30);
+            transform: translateY((pxToVw(-40)));
+        }
+    }
+}
